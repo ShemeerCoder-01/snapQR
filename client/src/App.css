@@ -1,0 +1,95 @@
+.wrapper{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.upload{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn{
+  width: 15em;
+  height: 4em;
+  padding: 10px;
+  margin: 12px;
+  font-size: 1.2rem;
+  border: none;
+  color:#fff;
+  background-color: dodgerblue;
+  border-radius: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn span{
+  font-size: 2rem;
+  margin-left: 1.2rem;
+}
+
+.editorTab{
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+
+
+.edit-icons{
+  display: grid;
+  gap: 7px;
+  grid-template-columns: repeat(2,50px);
+  grid-template-rows: repeat(5,50px);
+  place-items:center;
+  /* margin-top: 5rem; */
+  border: 2px solid gray;
+  border-radius: 7px;
+  padding: 0.6rem;
+  background: #212121;
+  height: fit-content;
+}
+
+
+.edit-icons  .icon{
+ padding: 1rem;
+ border: 1px solid gray;
+ border-radius: 6px;
+ color: #fff;
+}
+
+.inputFile{
+  opacity:0;
+  position:absolute;
+  bottom:7.85rem;
+}
+
+.download{
+  display: flex;
+  flex-direction: column;
+  margin-left: 5rem;
+  width: 150px;
+}
+
+.download-btn{
+    border: none;
+    outline: none;
+    background-color: var(--blue);
+    color: var(--white);
+    font-size: 1.1rem;
+    padding: 0.75rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    border-radius: 1.5rem;
+    cursor: pointer;
+    min-width: 150px;
+}
+
+.download-btn:hover{
+    box-shadow: 3px 3px 6px rgba(58,128,233,0.5);
+    transition: all 0.3s;
+}
