@@ -70,7 +70,6 @@ app.get('/qrcodes', (req, res) => {
     
     connection.query(command, (err, result) => {
         if (err) {
-            console.error("Error fetching data from the database", err);
             res.status(500).send("Error fetching data from the database");
         } else {
             res.status(200).send({
@@ -107,7 +106,19 @@ app.post('/qrcodes', (req, res) => {
 //@route DELETE /qrcodes/:id
 //@ access private
 app.delete('/qrcodes/:id', (req, res) => {
+    let id = req.params.id;
+    let command = `DELETE FROM scanneddocs WHERE id=${id}`;
+    connection.query(command, (err, result) => {
+        if (err) {
+            res.status(500).send("Error deleting data from the database");
+        } else {
+            res.status(200).send({
+                data: result,
+                message: "Data deleted from the database successfully"
+            });
+        }
 
+    });
 });
 
 
