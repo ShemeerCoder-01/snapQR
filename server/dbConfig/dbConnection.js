@@ -2,7 +2,7 @@ const mysql2 = require('mysql2');
 require('dotenv').config();
 
 const connection = mysql2.createConnection({
-    host:"Shemeer@127.0.0.1:3306",
+    host:"127.0.0.1:3306",
     user:"Shemeer",
     password:process.env.PASSWORD,
     database:'snapqr'
