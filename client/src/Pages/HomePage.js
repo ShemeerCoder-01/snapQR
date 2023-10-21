@@ -6,6 +6,7 @@ import axios from 'axios'
 import { userContext } from '../userContext';
 import LoginPage from '../Components/Login/index';
 import Cookies from 'js-cookie';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 function HomePage() {
   const [reader, setReader] = useState(false);
@@ -30,6 +31,10 @@ function HomePage() {
     setResult(result); // storing scanned data to a state variable.
   };
 
+  const handleDelete = async(id)=>{
+    const response = await axios.delete(`https://snapqr-backend.onrender.com/qrcodes/${id}`);
+    console.log(response);
+  }
 
   const handleClick = async () => {
     //db call and store the data in db using axios.
@@ -79,6 +84,7 @@ function HomePage() {
                 <p>{index + 1}. </p>
                 <p>  <strong>Url</strong> : {scanned.content}</p>
                 <p> <strong>Date</strong> : {scanned.scandate}</p>
+                <DeleteIcon onClick={()=>handleDelete(scanned.id)}/>
               </div>
             )
           })}
