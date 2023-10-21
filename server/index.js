@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 require('dotenv').config();
-// const { dbConnection, connection } = require('./dbConfig/dbConnection');
+const { dbConnection, connection } = require('./dbConfig/dbConnection');
 const uniqid = require('uniqid');
 const cors = require('cors');
 const Joi = require('joi');
@@ -9,27 +9,8 @@ const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken');
 const PORT = process.env.PORT || 8001;
 const SALTROUNDS = JSON.parse(process.env.SALTROUNDS);
-const mysql2 = require('mysql2');
-require('dotenv').config();
 
-// dbConnection();
-const connection = mysql2.createConnection({
-    host:"root",
-    user:"Shemeer",
-    password:process.env.PASSWORD,
-    database:'snapqr'
-});
-
-
-    connection.connect((err)=>{
-        if(err){
-            console.log("Error connecting to mysql database",err);
-        }
-        else{
-            console.log('Connected to database...');
-        }
-    });
-
+dbConnection();
 
 app.use(cors({
     origin: "https://snap-qr-lovat.vercel.app"
