@@ -2,7 +2,7 @@ const mysql2 = require('mysql2');
 require('dotenv').config();
 
 const connection = mysql2.createConnection({
-    host:"127.0.0.1:3306",
+    host:"https://snapqr-backend.onrender.com",
     user:"Shemeer",
     password:process.env.PASSWORD,
     database:'snapqr'
