@@ -13,7 +13,7 @@ const SALTROUNDS = JSON.parse(process.env.SALTROUNDS);
 dbConnection();
 
 app.use(cors({
-    origin: "*"
+    origin: "https://snap-qr-lovat.vercel.app/"
 }));
 
 app.use(express.json());

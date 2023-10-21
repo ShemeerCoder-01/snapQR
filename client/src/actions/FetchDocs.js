@@ -4,7 +4,7 @@ import axios from "axios";
 export const fetchDocs = async(setState,user)=>{
     // api call to backend for fetching saved docs in db.
     try {
-        const response = await axios.get('http://localhost:8001/qrcodes',{
+        const response = await axios.get('https://snapqr-backend.onrender.com/qrcodes',{
             params:{
                 email:user
             }

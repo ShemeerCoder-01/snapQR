@@ -34,7 +34,7 @@ function HomePage() {
   const handleClick = async () => {
     //db call and store the data in db using axios.
     let user = sessionStorage.getItem('user');
-    const response = await axios.post('http://localhost:8001/qrcodes', { result,userEmail:user });
+    const response = await axios.post('https://snapqr-backend.onrender.com/qrcodes', { result,userEmail:user });
     console.log(response);
     window.location.href = result
   }
