@@ -27,7 +27,8 @@ function LoginPage() {
             let user = {
                 email,password
             }
-            const response = await axios.post('https://snapqr-backend.onrender.com/login',user);
+            // const response = await axios.post('https://snapqr-backend.onrender.com/login',user);
+            const response = await axios.post('http://localhost:8001/login',user);
             console.log(response);
             setState({
                 ...state,
